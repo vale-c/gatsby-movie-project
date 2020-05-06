@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+/* Colors */
+$dark-bg: #312f2f;
+$black: #000;
+$white: #fff;
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --lh: 1.4rem;
+  line-height: var(--lh);
+}
+
+body {
+  background-color: $black;
+  font-family: "Roboto Slab", sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  background-color: $white;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  width: 100vw;
+
+  .title {
+    color: $black;
+    margin-bottom: 1.2rem;
+  }
+  .subtitle {
+
+  }
+}
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .column {
+      align-items: flex-start;
+      width: 25%;
+      padding: 1rem 10px;
+
+      .card {
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: $white;
+
+        .title {
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+
+        .card-content {
+          .card-image {
+            .image {
+              img {
+                border-radius: 5px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                overflow: hidden;
+              }
+            }
+          }
+          .card-text {
+            .box {
+              .overview {
+                margin-top: 1rem;
+              }
+              .hidden {
+                display: none;
+              }
+            }
+            .score {
+              font-size: 1.2rem;
+              font-weight: 700;
+            }
+            .vote {
+              display: flex;
+              justify-content: center;
+              margin-top: 0.5rem;
+              margin-bottom: 0;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
