@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import '../styles/series.scss';
 
 import axios from 'axios';
@@ -22,6 +23,7 @@ const TEXT_COLLAPSE_OPTIONS = {
 }
 
 function TrendingMovies() {
+
   const [TvData, setTvData] = useState([]);
   
   useEffect (() => {

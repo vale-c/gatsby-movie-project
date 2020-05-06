@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useStaticQuery, graphql } from "gatsby"
+
 import '../styles/series.scss';
+
+import Header from '../components/header';
 
 import axios from 'axios';
 import ReactTextCollapse from 'react-text-collapse';
@@ -21,7 +25,18 @@ const TEXT_COLLAPSE_OPTIONS = {
   }
 }
 
+
 function PopularMovies() {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+`)
+
   const [TvData, setTvData] = useState([]);
   
   useEffect (() => {
@@ -70,11 +85,14 @@ function PopularMovies() {
     )}
 
   return (
+    <>
+    <Header siteTitle={data.site.siteMetadata.title} />
     <div className="appContainer">
       <div className="row">
         {renderData()}
       </div>
     </div>
+    </>
   )
 }
 
