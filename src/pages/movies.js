@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/series.scss';
+
 import axios from 'axios';
 import ReactTextCollapse from 'react-text-collapse';
 
@@ -20,13 +21,11 @@ const TEXT_COLLAPSE_OPTIONS = {
   }
 }
 
-
-function Series() {
+function Movies() {
   const [TvData, setTvData] = useState([]);
   
   useEffect (() => {
-    const movieURL = `https://api.themoviedb.org/3/trending/tv/day?api_key=${MOVIE_API_KEY}&page=1`
-    //let PROXY = `https://cors-anywhere.herokuapp.com/`;
+    const movieURL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${MOVIE_API_KEY}&page=1`
 
     axios
       .get(movieURL)
@@ -80,4 +79,4 @@ function Series() {
 }
 
 
-export default Series;
+export default Movies;
