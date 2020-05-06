@@ -21,7 +21,7 @@ const TEXT_COLLAPSE_OPTIONS = {
   }
 }
 
-function Movies() {
+function TrendingMovies() {
   const [TvData, setTvData] = useState([]);
   
   useEffect (() => {
@@ -79,4 +79,4 @@ function Movies() {
 }
 
 
-export default Movies;
+export default TrendingMovies;
