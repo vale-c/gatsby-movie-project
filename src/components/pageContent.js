@@ -1,25 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/series.scss';
+import '../styles/pageContent.scss';
 
 import axios from 'axios';
-import ReactTextCollapse from 'react-text-collapse';
 
 const MOVIE_API_KEY = "fb32e7ccaf6950120020e21e3110f427";
-
-const TEXT_COLLAPSE_OPTIONS = {
-  collapse: false,
-  collapseText: '...show more',
-  expandText: 'show less',
-  minHeight: 70,
-  maxHeight: 200,
-  textStyle: {
-    backgroundColor: 'black',
-    margin: '0px',
-    color: 'white',
-    fontSize: '18px',
-    float: 'center'
-  }
-}
 
 
 function PopularMovies() {
@@ -56,11 +40,9 @@ function PopularMovies() {
                   </div>
                   <div className="card-text">
                     <div className="box">
-                      <ReactTextCollapse options={TEXT_COLLAPSE_OPTIONS} style={{color: "red"}}>
                         <p>
                           {info.overview}
                         </p>
-                      </ReactTextCollapse>
                       <span className="score">Score:</span>
                       <p className="vote">{info.vote_average}</p>
                     </div>
