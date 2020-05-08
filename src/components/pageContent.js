@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from "gatsby"
-
 import '../styles/series.scss';
-
-import Header from '../components/header';
 
 import axios from 'axios';
 import ReactTextCollapse from 'react-text-collapse';
@@ -27,20 +23,12 @@ const TEXT_COLLAPSE_OPTIONS = {
 
 
 function PopularMovies() {
-  const data = useStaticQuery(graphql`
-    query HeaderQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-`)
-
   const [TvData, setTvData] = useState([]);
   
   useEffect (() => {
     const movieURL = `https://api.themoviedb.org/3/movie/popular?api_key=${MOVIE_API_KEY}&page=1`
+    //  const movieURL = `https://api.themoviedb.org/3/trending/tv/day?api_key=${MOVIE_API_KEY}&page=1`
+    //   const movieURL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${MOVIE_API_KEY}&page=1`
 
     axios
       .get(movieURL)
@@ -86,7 +74,6 @@ function PopularMovies() {
 
   return (
     <>
-    <Header siteTitle={data.site.siteMetadata.title} />
     <div className="appContainer">
       <div className="row">
         {renderData()}
